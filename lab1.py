@@ -12,7 +12,7 @@ for symbol in pokemon_string:
 #вывод 2 пункта
 print ('Количество символов в файле без пробелов и знаков препинания:',count)
 
-pokemon_full_list = json.loads (file1)
+pokemon_full_list = json.loads (pokemon_string)
 max_lenght = 0
 pokemon_name = ' '
 for descr in pokemon_full_list:
