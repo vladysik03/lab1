@@ -1,33 +1,33 @@
 import json
+
 file=open ('pokemon_full.json')
-file1 = file.read()
+pokemon_string = file.read ()
 #вывод 1 пункта
-print("Количество символов в файле:",len(file1))
+print ('Количество символов в файле:',len (pokemon_string))
 
 count = 0
-for i in file1:
-    if i.isalnum() == True:
+for symbol in pokemon_string:
+    if symbol.isalnum ():
         count += 1
 #вывод 2 пункта
-print("Количество символов в файле без пробелов и знаков препинания:",count)
+print ('Количество символов в файле без пробелов и знаков препинания:',count)
 
-pokemon_full_massive = json.loads(file1)
-max_dlina = 0
+pokemon_full_list = json.loads (file1)
+max_lenght = 0
 pokemon_name = ' '
-for descr in pokemon_full_massive:
-    max_dlina = max(len(descr['description']),max_dlina)
-    if len(descr['description']) == max_dlina:
+for descr in pokemon_full_list:
+    max_lenght = max (len (descr['description']), max_lenght)
+    if len (descr['description']) == max_lenght:
         pokemon_name = descr['name']
 #вывод 3 пункта
-print("Длина:", max_dlina, "Покемон:", pokemon_name)
-
-max_dlina = 0
+print ('Длина:', max_lenght, 'Покемон:', pokemon_name)
+max_lenght = 0
 max_ability = ' '
-for abilities in pokemon_full_massive:
+for abilities in pokemon_full_list:
     for ability in abilities['abilities']:
-        max_dlina = max(len(ability.split()),max_dlina)
-        if max_dlina == len(ability.split()):
+        max_lenght = max (len (ability.split ()), max_lenght)
+        if max_lenght == len (ability.split ()):
             max_ability = ability
 #вывод 4 пункта
-print("Умение: ", max_ability)
-file.close()
+print ('Умение: ', max_ability)
+file.close ()
