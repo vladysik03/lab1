@@ -1,11 +1,11 @@
 import json
 file=open ('pokemon_full.json')
-file1 = file.read()
+file_first = file.read()
 #вывод 1 пункта
-print("Количество символов в файле:",len(file1))
+print("Количество символов в файле:",len(file_first))
 
 count = 0
-for i in file1:
+for i in file_first:
     if i.isalnum() == True:
         count += 1
 #вывод 2 пункта
